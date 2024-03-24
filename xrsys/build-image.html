@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>潇然系统镜像构建教程 | 潇然工作室</title><meta name="keywords" content="潇然工作室,Xiaoran Studio,潇然系统,Xiaoran System,Windows,操作系统,系统安装,系统重装,在线装机,xrsys"><meta name="author" content="狂犬主子"><meta name="copyright" content="狂犬主子"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="潇然系统镜像构建教程"><meta name="application-name" content="潇然系统镜像构建教程"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="潇然系统镜像构建教程"><meta property="og:url" content="https://www.xrgzs.top/xrsys/build-image.html"><meta property="og:site_name" content="潇然工作室"><meta property="og:description" content="潇然系统镜像构建教程注意：本文的信息已经过时，尤其是快速安装版镜像部分，需要重新编写！快速安装版镜像有新的构建方法，目前暂不公开。 从2022年开始，综合多方面考虑，我们不再提供潇然系统镜像，但是这并不意味着潇然系统的镜像版本就不存在，如果需要的话，你仍然可以自行构建。 经过数次对系统安装组件的调整"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://www.xrgzs.top/img/cover/36.jpg"><meta property="article:author" content="狂犬主子"><meta property="article:tag" content="[&quot;潇洒自然&quot;,&quot;潇洒自然工作室&quot;,&quot;潇然工作室&quot;,&quot;Xiaoran Studio&quot;,&quot;xrgzs&quot;,&quot;狂犬主子&quot;,&quot;网络装机&quot;,&quot;潇然系统&quot;,&quot;潇然装机&quot;,&quot;装机助理&quot;,&quot;装机软件&quot;,&quot;重装系统&quot;]"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://www.xrgzs.top/img/cover/36.jpg"><meta name="description" content="潇然系统镜像构建教程注意：本文的信息已经过时，尤其是快速安装版镜像部分，需要重新编写！快速安装版镜像有新的构建方法，目前暂不公开。 从2022年开始，综合多方面考虑，我们不再提供潇然系统镜像，但是这并不意味着潇然系统的镜像版本就不存在，如果需要的话，你仍然可以自行构建。 经过数次对系统安装组件的调整"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://www.xrgzs.top/xrsys/build-image"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-DT3krL25yi"/><meta name="360-site-verification" content="ad94fa3f50367995f3d56d0138c75172"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="https://npm.elemecdn.com/font-awesome-animation/css/font-awesome-animation.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "l4rwinm8kk");</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"XiaoranGPT","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: {"enable":true,"ck":"3EkoIokEjoCIrHFE","LingQueMonitorID":null},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: {"mode":"api","api":"https://img2color-go.xrgzs.top/api?img=","cover_change":true},
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 狂犬主子","link":"链接: ","source":"来源: 潇然工作室","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '潇然工作室',
+  title: '潇然系统镜像构建教程',
+  postAI: '',
+  pageFillDescription: '潇然系统镜像构建教程, 创建虚拟机, PE下恢复系统镜像, PE下构建系统镜像（Build-ed Xiaoran System Image）, 制作快速安装版镜像（Deploy-ed Xiaoran System Image）, 实机测试潇然系统镜像构建教程注意本文的信息已经过时尤其是快速安装版镜像部分需要重新编写快速安装版镜像有新的构建方法目前暂不公开从年开始综合多方面考虑我们不再提供潇然系统镜像但是这并不意味着潇然系统的镜像版本就不存在如果需要的话你仍然可以自行构建经过数次对系统安装组件的调整我们为大家准备了以下的潇然系统镜像构建教程在此之前我们需要了解潇然系统的版本分类按照接管部署的方式分类原版接管第三方接管略按照安装部署的方式分类使用潇然一键装机助理在线重装功能恢复构建好的潇然系统镜像文件恢复快速安装版镜像文件其中构建好的潇然系统镜像和快速安装版镜像可以通过以下两种方式制作自行下载相关组件部署潇然一键装机助理在线重装自助构建本文就介绍通过上述第种方式进行构建创建虚拟机我们的虚拟机配置参考了多篇系统封装教程融合了个人在系统封装时的经验能够确保稳定性和兼容性下面我们以最新的作演示版本也可以参考打开新建虚拟机选择自定义高级点击下一步选择或更低版本点击下一步选择稍后安装操作系统点击下一步这里我们以构建潇然系统位为例选择点击下一步输入虚拟机名称如演示点击下一步固件类型选择点击下一步分配虚拟机的处理器注意处理器内核总数不要低于双核如个核点击下一步分配虚拟机的内存注意内存大小不要低于如点击下一步为了支持提高下载速度选择使用桥接网络点击下一步保持默认点击下一步为了避免恢复到实体机以后蓝屏虚拟磁盘类型最好选择仅快速安装版需要用到如无需要可以保持默认点击下一步保持默认点击下一步虚拟磁盘大小越大越好这边设置为选择将虚拟磁盘储存为单个文件点击下一步保持默认点击下一步点击完成切换到虚拟机选项卡点击编辑虚拟机设置在硬件选项卡中点击勾选启动时连接选择使用映像文件点击浏览找到的镜像文件点击打开此处使用的镜像下载地址点击网络适配器取消勾选启动时连接点击适配器兼容性选择取消勾选与虚拟机共享蓝牙设备为了避免其它设备干扰分别点击声卡打印机点击下方的移除删掉这些设备点击显示器取消勾选加速图像取消勾选在虚拟机中自动调整用户界面大小点击右下方的确定保存设置回到主界面点击右方的打开下拉菜单选择打开电源时进入固件点击图像进入虚拟机此时您的鼠标和键盘被定向到虚拟机内如需退出请按下组合键根据帮助内容使用键切换到选项卡使用键切换到条目使用键将该条目调整到最上方结果如图所示根据帮助按下保存并退出在弹出的提示框内选择后按确认后虚拟机会重新启动到下恢复系统镜像进入系统以后我们需要给虚拟机临时连接一下网络右键单击窗口右下方状态栏上的选择连接观察一下虚拟机内的提示确定已经正常连接到网络运行桌面上的潇然一键装机助理程序会联网自动更新更新完毕后会进入主界面这里由于新建的虚拟硬盘没有进行过硬盘分区会弹出提示我们点击是开始一键分区非常的贴心在一键分区界面我们选择要分区的硬盘如序号下方分区表我们设置为分区数设置为主分区设置为点击一键分区弹出提示我们点击是稍等片刻分区完成弹出提示我们点击是点击系统安装菜单出现以下界面在系统安装主界面我们需要对高级选项进行一些配置取消勾选引导分区仅构建需要构建快速安装版请勿取消勾选取消勾选安装一键急救系统取消勾选全自动安装系统取消勾选自动重启计算机仅新版需要勾选导入英特尔代驱动弹出提示点击是最后主界面如下显示点击高级选项旁边的更多选项弹出以下窗口进行如下配置取消勾选导入自定义驱动取消勾选添加目录勾选禁用系统保留空间勾选移除勾选关闭自动加密勾选跳过校验勾选游戏性能优化测试弹出提示点击是仅需要勾选导入补丁及驱动仅需要勾选导入驱动勾选禁用自动更新设置完成后点击确定返回主界面点击在线重装这里我们以原版专业位办公主板驱动为例点击该项目右方的安装此系统我们会发现这里的选项已经继承了前面的设置我们选择要安装的分区如主分区点击开始安装弹出提示点击是至此等待系统下载安装配置完成如果您还有什么需要定制修改的请现在打开系统盘进行编辑过了这个村就没有这个店了下构建系统镜像安装完成后点击返回主界面点击系统备份出现以下界面如果不出意外正常情况下点击开始备份即可构建出最新版的系统镜像文件但根据上面的截图我们发现有两处不对源备份盘和目标备份的镜像文件位置冲突第二个分区可用大小过小可能无法储存备份的镜像文件针对第个问题我们可以点击浏览选择镜像保存的位置到盘针对第二个问题我们可以格式化盘或删除文件夹删除后程序总的分区可用大小仍未变化我们可以到系统安装界面点击搜索刷新刷新分区进入系统备份中大小就够用了前面说过针对第个源备份盘和目标备份的镜像文件位置冲突的问题我们可以点击浏览选择镜像保存的位置到盘顺便我们也可以修改一下镜像保存的名称默认程序备份出来的格式为格式如果嫌压缩速度过慢您可以将压缩等级调低一点如快速压缩如果嫌压缩体积过大可以将压缩格式调为同时将压缩等级调为极限压缩如果习惯传统的格式可以将压缩格式调为之后点击开始备份等待备份完成即可那如何把备份好的镜像弄出来呢接盘拷速度慢不稳定连传最方便速度较快挂虚拟硬盘拷麻烦速度快下面我们演示第种方式我们先将虚拟机关机双击设备里的硬盘快速进入硬盘设置记录好硬盘文件的位置后彻底关闭软件打开磁盘打开虚拟磁盘文件找到你刚才记录的虚拟硬盘文件点击打开此时就会将虚拟硬盘里面的内容显示出来在对应的硬盘分区里面找到刚刚备份出来的系统镜像文件复制到指定文件夹即可制作快速安装版镜像为了降低蓝屏几率我们需要断开网络连接右键单击窗口右下方状态栏上的选择断开连接观察一下虚拟机内的提示确定无法连接到网络接下来我们需要删除万能驱动避免虚拟机的主板驱动导致镜像系统恢复到实体机后蓝屏万能驱动位于下的及数字将其删除即可注意如果刚才您在系统安装主界面取消勾选了引导分区这里我们需要手动修复一下引导打开虚拟机的命令提示符输入以下命令后回车注意其中的为系统盘的盘符请根据实际情况修改不要直接复制粘贴重启虚拟机这个就不教了等待系统部署完成进入桌面进入桌面后如果您还有什么需要定制修改的请现在就对系统进行设置如安装各种软件过了这个村就没有这个店了这个过程中最好不要联网如果以上版本系统联上了网会自动下载虚拟机的主板驱动这样可能会导致制作出来的系统镜像恢复到实体机后蓝屏至于那就更不用说了肯定是别装当然如果你就是封装出来到虚拟机里面用的可以忽略我上面说的内容这里我们对系统进行一些调整比如任务栏显示搜索框显示触摸键盘显示按钮取消固定所有项目浏览器主页更改为安装希沃白板对于其它安装包我们可以通过制作进行导入也可以拷贝到盘然后将盘插入到虚拟机导入如果使用后者可能会出现残留信息如果你不在意蓝屏问题现在可以联网到潇然一键装机助理浏览器下载对应软件这边我们在虚拟机外将希沃白板的官网最新安装包制作成格式导入虚拟机重启后检查更改是否生效拍摄快照关闭虚拟机双击快速弹出设置点击镜像文件路径旁边的下拉按钮选择之前使用过的点击确定开启虚拟机疯狂按任意键选择第一项回车进入系统以后打开资源管理器进入盘删除以下文件夹删除以下文件打开潇然一键装机助理选择系统备份按照下构建系统镜像的方法制作系统镜像文件将备份好的系统镜像文件恢复到实体机测试即可实机测试',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-24 18:26:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script async src="https://umami.lmxiao.top/script.js" data-website-id="e1fdf702-b002-4b16-965c-184350ce501b"></script><link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com"><link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com"><link rel="preconnect" crossorigin="anonymous" href="https://cdn.jsdelivr.net"><link rel="preconnect" crossorigin="anonymous" href="https://cdn.bootcdn.net"><link rel="preconnect" crossorigin="anonymous" href="https://npm.elemecdn.com"><link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Google+Sans:normal,italic,bold,bolditalic&display=swap"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet"><link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@ayahub/webfont-harmony-sans-sc@1.0.0/css/index.css" /><script src="https://myhkw.cn/player/js/jquery.min.js" type="text/javascript"></script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="潇然工作室" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">站点</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.xrgzs.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/blog.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://alist.xrgzs.top/" title="下载站"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/cloud-storage.png" alt="下载站"/><span class="back-menu-item-text">下载站</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://sys.xrgzs.top/" title="系统部署"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/laptop-settings.png" alt="系统部署"/><span class="back-menu-item-text">系统部署</span></a><a class="back-menu-item" href="https://www.xrgzs.top/xrok.html" title="装机助理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/get-started-app.png" alt="装机助理"/><span class="back-menu-item-text">装机助理</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://pe.xrgzs.top/" title="维护启动"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/c-drive.png" alt="维护启动"/><span class="back-menu-item-text">维护启动</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">潇然工作室</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 项目</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://sys.xrgzs.top/"><i class="fa-solid fa-gear faa-tada"></i><span> 系统部署</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/xrok"><i class="fa-solid fa-arrows-rotate faa-tada"></i><span> 装机助理</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://pe.xrgzs.top/"><i class="fa-solid fa-toolbox faa-tada"></i><span> 维护启动</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 资源</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://l.xr.oxyxc.top/msdn"><i class="fa-brands fa-windows faa-tada"></i><span> Windows</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/ms-office-c2r-download"><i class="fa-solid fa-file-word faa-tada"></i><span> Office C2R</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/ms-office-msi-download"><i class="fa-regular fa-file-word faa-tada"></i><span> Office MSI</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/tvbox"><i class="fa-solid fa-box faa-tada"></i><span> 盒子</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://xrgzs.ysepan.com/"><i class="fa-solid fa-bookmark faa-tada"></i><span> 藏经阁</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/xrgzs"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我们</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/360/" style="font-size: 1.05rem;">360<sup>1</sup></a><a href="/tags/arch-linux/" style="font-size: 1.05rem;">Arch Linux<sup>1</sup></a><a href="/tags/centos/" style="font-size: 1.05rem;">CentOS<sup>2</sup></a><a href="/tags/linux/" style="font-size: 1.05rem;">Linux<sup>7</sup></a><a href="/tags/office/" style="font-size: 1.05rem;">Office<sup>6</sup></a><a href="/tags/vip/" style="font-size: 1.05rem;">VIP<sup>1</sup></a><a href="/tags/winpe/" style="font-size: 1.05rem;">WinPE<sup>1</sup></a><a href="/tags/windows/" style="font-size: 1.05rem;">Windows<sup>9</sup></a><a href="/tags/windows7/" style="font-size: 1.05rem;">Windows7<sup>1</sup></a><a href="/tags/xiaoran-onekey/" style="font-size: 1.05rem;">Xiaoran Onekey<sup>1</sup></a><a href="/tags/xiaoran-pe/" style="font-size: 1.05rem;">Xiaoran PE<sup>1</sup></a><a href="/tags/xiaoran-studio/" style="font-size: 1.05rem;">Xiaoran Studio<sup>6</sup></a><a href="/tags/xiaoran-system/" style="font-size: 1.05rem;">Xiaoran System<sup>5</sup></a><a href="/tags/adblock/" style="font-size: 1.05rem;">adblock<sup>1</sup></a><a href="/tags/curl/" style="font-size: 1.05rem;">curl<sup>1</sup></a><a href="/tags/pacman/" style="font-size: 1.05rem;">pacman<sup>1</sup></a><a href="/tags/xfs/" style="font-size: 1.05rem;">xfs<sup>1</sup></a><a href="/tags/%E5%8E%9F%E5%8E%82%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">原厂系统<sup>2</sup></a><a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 1.05rem;">去广告<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.05rem;">安全<sup>1</sup></a><a href="/tags/%E6%81%A2%E5%A4%8D%E7%9B%98/" style="font-size: 1.05rem;">恢复盘<sup>2</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">操作系统<sup>6</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" style="font-size: 1.05rem;">服务器运维<sup>4</sup></a><a href="/tags/%E6%9D%80%E6%AF%92/" style="font-size: 1.05rem;">杀毒<sup>1</sup></a><a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 1.05rem;">油猴<sup>1</sup></a><a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 1.05rem;">浏览器<sup>2</sup></a><a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 1.05rem;">浏览器插件<sup>1</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E4%B8%80%E9%94%AE%E8%A3%85%E6%9C%BA%E5%8A%A9%E7%90%86/" style="font-size: 1.05rem;">潇然一键装机助理<sup>1</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" style="font-size: 1.05rem;">潇然工作室<sup>6</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">潇然系统<sup>5</sup></a><a href="/tags/%E6%BF%80%E6%B4%BB/" style="font-size: 1.05rem;">激活<sup>2</sup></a><a href="/tags/%E7%81%AB%E7%BB%92/" style="font-size: 1.05rem;">火绒<sup>1</sup></a><a href="/tags/%E7%94%B5%E8%84%91%E7%AE%A1%E5%AE%B6/" style="font-size: 1.05rem;">电脑管家<sup>1</sup></a><a href="/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/" style="font-size: 1.05rem;">硬盘扩容<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 1.05rem;">系统安装<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/" style="font-size: 1.05rem;">系统镜像<sup>2</sup></a><a href="/tags/%E8%84%9A%E6%9C%AC/" style="font-size: 1.05rem;">脚本<sup>1</sup></a><a href="/tags/%E8%A7%84%E5%88%99/" style="font-size: 1.05rem;">规则<sup>1</sup></a><a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 1.05rem;">证书<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.05rem;">软件<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/" itemprop="url">潇然系统</a></span></div></div><h1 class="post-title" itemprop="name headline">潇然系统镜像构建教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="post-meta-icon anzhiyufont anzhiyu-icon-calendar-days"></i><span class="post-meta-label">发表于</span><time itemprop="dateCreated datePublished" datetime="2023-03-24T09:33:46.000Z" title="发表于 2023-03-24 17:33:46">2023-03-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="潇然系统镜像构建教程"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为云南，大理"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>云南，大理</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/cover/36.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.xrgzs.top/xrsys/build-image"><header><a class="post-meta-categories" href="/categories/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/" itemprop="url">潇然系统</a><h1 id="CrawlerTitle" itemprop="name headline">潇然系统镜像构建教程</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">狂犬主子</span><time itemprop="dateCreated datePublished" datetime="2023-03-24T09:33:46.000Z" title="undefined 2023-03-24 17:33:46">2023-03-24</time></header><h1 id="潇然系统镜像构建教程"><a href="#潇然系统镜像构建教程" class="headerlink" title="潇然系统镜像构建教程"></a>潇然系统镜像构建教程</h1><p><strong>注意：本文的信息已经过时，尤其是快速安装版镜像部分，需要重新编写！</strong>快速安装版镜像有新的构建方法，目前暂不公开。</p>
+<p>从2022年开始，综合多方面考虑，我们不再提供潇然系统镜像，但是这并不意味着潇然系统的镜像版本就不存在，如果需要的话，你仍然可以自行构建。</p>
+<p>经过数次对系统安装组件的调整，我们为大家准备了以下的潇然系统镜像构建教程。</p>
+<p>在此之前，我们需要了解潇然系统的版本分类：</p>
+<ol>
+<li>按照接管部署的方式分类<ul>
+<li>原版接管</li>
+<li>第三方接管<ul>
+<li>略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>按照安装部署的方式分类<ul>
+<li>使用<strong>潇然一键装机助理在线重装</strong>功能</li>
+<li>恢复<strong>构建好的潇然系统镜像（Build-ed Xiaoran System Image）</strong>文件</li>
+<li>恢复<strong>快速安装版镜像（Deploy-ed Xiaoran System Image）</strong>文件</li>
+</ul>
+</li>
+</ol>
+<p>其中，构建好的潇然系统镜像和快速安装版镜像可以通过以下两种方式制作：</p>
+<ol>
+<li>自行下载相关组件部署</li>
+<li>潇然一键装机助理在线重装自助构建</li>
+</ol>
+<p>本文就介绍通过上述第2种方式进行构建。</p>
+<h2 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h2><p>我们的虚拟机配置参考了多篇系统封装教程，融合了个人在系统封装时的经验，能够确保稳定性和兼容性。下面我们以最新的VMware Workstation 17作演示，15、16版本也可以参考。</p>
+<p>打开VMware Workstation，新建虚拟机</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/181961/27/34173/31898/641d1ed3F6763aed2/3ecd266cbb68f768.png"></p>
+<p>选择“自定义(高级)”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/178375/5/30287/67872/641d2454Fbff3698b/4654309e7a0a42a1.png"></p>
+<p>选择“Workstation 16.x”或更低版本，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/70204/3/25185/57609/641d249bF8d7728c6/e82c83c8659938bb.png"></p>
+<p>选择“稍后安装操作系统”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/180613/27/33531/44970/641d24a6F1f131297/a9835d2508ecffbb.png"></p>
+<p>这里我们以构建潇然系统Windows 10 64位为例，选择“Windows 10 x64”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/30581/11/21525/36564/641d24c4Fc579a73b/b693f67dd0fd6b23.png"></p>
+<p>输入虚拟机名称，如“Win10x64演示”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/148238/29/36327/33955/641d24d2F980ee7e6/d89153da20fe400a.png"></p>
+<p>固件类型选择“BIOS”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/138640/2/34615/25702/641d242cF3e084fa3/12cecf7438b49244.png"></p>
+<p>分配虚拟机的处理器，注意<strong>处理器内核总数不要低于双核</strong>，如“1个CPU，4核”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/46284/22/23174/29531/641d24e2F56a58a07/e700cf8384a503eb.png"></p>
+<p>分配虚拟机的内存，注意<strong>内存大小不要低于“2048 MB (2 GB)”</strong>，如“4096 MB (4 GB)”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/60482/28/24329/45504/641d250bF328be6af/8f4302ea376bb836.png"></p>
+<p>为了支持IPv6，提高下载速度，选择“使用桥接网络”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/111600/1/34019/55032/641d2564F286002fe/dbb6737e6ab36d64.png"></p>
+<p>保持默认，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/73964/27/19851/40593/641d2581Fda3b5f57/198664f3b047fb66.png"></p>
+<p>为了避免恢复到实体机以后蓝屏，虚拟磁盘类型<strong>最好选择“SATA”</strong>（仅快速安装版需要用到，如无需要可以保持默认），点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/81856/15/23841/28450/641d259eF27b3a75a/b1944fb8349bc478.png"></p>
+<p>保持默认，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/114741/8/31013/174663/641d2290F102b5e34/1dfeca0ce5e1c399.png"></p>
+<p>虚拟磁盘大小越大越好，这边设置为“60 GB”，选择“将虚拟磁盘储存为单个文件”，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/171500/38/35929/60305/641d25e9F73c4fea6/173644f6a52f3c07.png"></p>
+<p>保持默认，点击“下一步”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/95570/34/38541/29911/641d25f6F08a47ab6/fda0624f1b103bd5.png"></p>
+<p>点击“完成”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/207324/12/27155/47340/641d2600F1c39f463/ae83daf2b1a0538f.png" alt="image-20230324122431416"></p>
+<p>切换到虚拟机选项卡，点击“编辑虚拟机设置”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/123147/23/36336/89168/641d262bFd6ee9656/9dc91e844ae2c41f.png"></p>
+<p>在“硬件”选项卡中，点击“CD&#x2F;DVD”，勾选“启动时连接”，选择“使用ISO映像文件(M)”，点击“浏览”，找到WinPE的ISO镜像文件，点击“打开”</p>
+<p>此处使用的PE ISO镜像下载地址：<a target="_blank" rel="noopener" href="https://alist.xrgzs.top/d/pxy/Xiaoran%20Studio/Onekey/PE/XRPE.iso">XRPE.iso</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/181895/26/33744/74212/641d269fFd91b37bb/1a5f32bc9d6558f2.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/111982/20/33834/66807/641d2738Fdfa9282e/160ead6450b1de64.png"></p>
+<p>点击“网络适配器”，取消勾选“启动时连接”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/218318/40/24364/88484/641d2778F0e874554/671d960e30ed4bab.png"></p>
+<p>点击“USB 适配器”，“USB 兼容性”选择“USB 2.0”，取消勾选“与虚拟机共享蓝牙设备”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/147353/11/34476/65690/641d2797F3c6ebc04/c47c607cb016f8bd.png"></p>
+<p>为了避免其它设备干扰，分别点击“声卡”、“打印机”，点击下方的“移除(R)”，删掉这些设备</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/163663/12/33156/75153/641d2857F4a511548/41c6752f138db412.png"></p>
+<p>点击“显示器”，取消勾选“加速 3D 图像(3)”，取消勾选“在虚拟机中自动调整用户界面大小(O)”，点击右下方的“确定”，保存设置，回到主界面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/192616/14/33715/102375/641d2878Fcc1bcf80/495659cc67392d99.png"></p>
+<p>点击<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/38279/3/20627/485/641d29c7Fcc443c1c/50d1e0672fe3a336.png">右方的<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/219380/36/27181/180/641d29e1F8bfa4556/e21c5afd17cf258d.png">打开下拉菜单，选择“打开电源时进入固件(F)”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/98549/15/36974/99807/641d297eF3463649d/4fddd12b0ae10ed6.png"></p>
+<p>点击图像，进入虚拟机，此时您的鼠标和键盘被定向到虚拟机内，如需退出，请按下组合键“<code>Ctrl</code> + <code>Alt</code>”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/192017/7/33891/37971/641d2b58F47208121/c2139ce89655664f.png"></p>
+<p>根据帮助内容，使用“→”键切换到“Boot”选项卡，使用“↓”键切换到“CD-ROM Drive”条目，使用“+”键将该条目调整到最上方</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/23116/6/20726/32462/641d2bb4F5416ab4e/14437c8326b75189.png"></p>
+<p>结果如图所示</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/118652/28/33519/29195/641d2c53Fc4b0bee3/6a7161dd36e0f1bb.png"></p>
+<p>根据帮助，按下“F10”保存并退出，在弹出的提示框内选择“Yes”后按“Enter”确认后，虚拟机会重新启动到WinPE ISO</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/134861/12/30146/28621/641d2c66F6f0ffa34/53a0bbb1f4dd2ad5.png"></p>
+<h2 id="PE下恢复系统镜像"><a href="#PE下恢复系统镜像" class="headerlink" title="PE下恢复系统镜像"></a>PE下恢复系统镜像</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/46250/32/23551/239624/641d360cFc8a533ae/cee22b26ac04394b.png"></p>
+<p>进入WinPE系统以后，我们需要给虚拟机<strong>临时连接一下网络</strong>，<strong>右键</strong>单击窗口右下方状态栏上的<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/132399/31/30046/330/641d3579F8f5217fa/e92dcef456e9bfbf.png">，选择“连接(C)”，观察一下虚拟机内的提示，确定已经正常连接到网络</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/201808/13/29584/7655/641d3654F870cff34/8f9401dcfad72ed9.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/74326/21/20303/187373/641d367cF2091c674/d38e831a47704f37.png"></p>
+<p>运行桌面上的“潇然一键装机助理”，程序会联网自动更新，更新完毕后会进入主界面，这里由于新建的虚拟硬盘没有进行过硬盘分区，会弹出提示，我们点击“是(Y)”开始一键分区，非常的贴心</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/201094/29/22046/61341/641d3731F272deaba/a09e4ab63389ac30.png"></p>
+<p>在“一键分区”界面，我们选择要分区的硬盘，如“序号1|VMwareVirtualSATAHardDrive|60.00GB|SATA”，下方“分区表”我们设置为“MBR”，“分区数”设置为“2”，“主分区”设置为“40 GB”，点击“一键分区”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/69413/25/23897/52078/641d380cF8568a42c/3bec7530693dd6ef.png"></p>
+<p>弹出提示，我们点击“是(Y)”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img14.360buyimg.com/ddimg/jfs/t1/153895/3/31003/9525/641d40e5F1c3d1643/fe3430729b276576.jpg"></p>
+<p>稍等片刻，分区完成，弹出提示，我们点击“是”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img12.360buyimg.com/ddimg/jfs/t1/62303/38/25149/5645/641d4113Fa01c22b3/81ae78074196acee.jpg"></p>
+<p>点击“系统安装”菜单<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/8d8e9bf24b7cea3d9f64982b10481dc0.png">，出现以下界面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/d9d4e0192f4a19f24f2163eabf4ac72c.png"></p>
+<p>在“系统安装”主界面，我们需要对“高级选项”进行一些配置：</p>
+<ol>
+<li>取消勾选“引导分区”（仅构建 Builded Xiaoran System Image 需要，<strong>构建快速安装版请勿取消勾选</strong>）</li>
+<li>取消勾选“安装一键急救系统”</li>
+<li>取消勾选“全自动安装系统”</li>
+<li>取消勾选“自动重启计算机”</li>
+<li>（仅新版Win10需要）勾选“导入英特尔11代VMD驱动”，弹出提示，点击“是”</li>
+</ol>
+<p>最后主界面如下显示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/fdeb84e09e17c8c862ffba50ff147e9b.png"></p>
+<p>点击“高级选项”旁边的“更多选项”<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/dde5e0723c8963052e86a26a0ed86723.png">，弹出以下窗口，进行如下配置：</p>
+<ol>
+<li>取消勾选“导入自定义驱动”</li>
+<li>取消勾选“添加$OEM$目录”</li>
+<li>勾选“禁用系统保留空间”</li>
+<li>勾选“移除Windows Defender”</li>
+<li>勾选“关闭BitLocker自动加密”</li>
+<li>勾选“跳过TPM&#x2F;CPU校验”</li>
+<li>勾选“游戏性能优化[测试]”，弹出提示，点击“是”</li>
+<li>（仅Win7需要）勾选“导入Nvme补丁及驱动”</li>
+<li>（仅Win7需要）勾选“导入USB3驱动”</li>
+<li>勾选“禁用Windows自动更新”</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/d1b553be2dafc7c7f5d30f2ff0eae652.png"></p>
+<p>设置完成后，点击“确定”，返回主界面，点击“在线重装”<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4bbc0defcc1f08a992d0376c2f4e9662.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/f9bd65f01f9183c35169c51aa93aa182.png" alt="image-20230324150059691"></p>
+<p>这里我们以“【原版】22H2 19045 专业 64位 2021办公 主板驱动 iso”为例，点击该项目右方的“安装此系统<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/85ed2b0bc0d42d1fd3c966cdfb173dfd.png">”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/80bcf37eeac1ed68635eb6b21512af1f.png"></p>
+<p>我们会发现这里的选项已经继承了前面的设置，我们选择要安装的分区，如“C:|1:1|主分区,MBR||40.00GB|39.92GB”，点击“开始安装”，弹出提示，点击“是”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/723cc706b8498d7e00c51cd620edfc60.png"></p>
+<p>至此，等待系统下载安装配置完成</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4f97dffa9bc7fbbce9dfdfbc5dc234f9.png"></p>
+<p>如果您还有什么需要定制修改的，请现在打开系统盘进行编辑，过了这个村就没有这个店了</p>
+<h2 id="PE下构建系统镜像（Build-ed-Xiaoran-System-Image）"><a href="#PE下构建系统镜像（Build-ed-Xiaoran-System-Image）" class="headerlink" title="PE下构建系统镜像（Build-ed Xiaoran System Image）"></a>PE下构建系统镜像（Build-ed Xiaoran System Image）</h2><p>安装完成后，点击“返回主界面”，点击“系统备份<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/ce3193f39b34f06b57257bbc5dae3e80.png">”，出现以下界面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1d9fc54a5b4ebfc56bfeed853d05ae0c.png" alt="image-20230324152624942"></p>
+<p>如果不出意外，正常情况下，点击“开始备份”即可构建出最新版的系统镜像文件</p>
+<p>但根据上面的截图，我们发现有两处不对：</p>
+<ol>
+<li>源备份盘（C:\）和目标备份的镜像文件位置（C:\）冲突</li>
+<li>第二个分区（1:2）可用大小过小，可能无法储存备份的镜像文件</li>
+</ol>
+<p>针对第1个问题，我们可以点击“浏览<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/3449b07d8fa4ec4b927218f5565e45f3.png">”选择镜像保存的位置到E盘（1:2)；针对第二个问题，我们可以格式化E盘，或删除<code>E:\OSDownload</code>文件夹</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1a141d80eb08e28589bd3f53706836fb.png"></p>
+<p>删除后，程序总的分区可用大小仍未变化</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/9d74b60e05e391f3c03183f9cc0389e8.png" alt="image-20230324153858321"></p>
+<p>我们可以到“系统安装”界面点击“搜索刷新”，“刷新分区”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/9da0e98929349d0a6bd8961845d8ebb4.png"></p>
+<p>进入系统备份中，大小就够用了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/dac3da5dc337a8f681443d2f0e1391a0.png"></p>
+<p>前面说过，针对第1个源备份盘（C:\）和目标备份的镜像文件位置（C:\）冲突的问题，我们可以点击“浏览<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/3449b07d8fa4ec4b927218f5565e45f3.png">”选择镜像保存的位置到E盘（1:2)，顺便我们也可以修改一下镜像保存的名称</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/fd5f8158e53022b60a2745baf415e118.png"></p>
+<p>默认程序备份出来的格式为WIM格式，如果嫌压缩速度过慢，您可以将“压缩等级”调低一点，如“快速压缩”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/5c54fc509aba10ce115a9025172c8608.png"></p>
+<p>如果嫌压缩体积过大，可以将“压缩格式”调为“*.ESD”，同时将“压缩等级”调为极限压缩</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1ef9a3764f4cd280ffd9589b898be3a6.png"></p>
+<p>如果习惯传统的Ghost格式，可以将“压缩格式”调为“GHO”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4db73154d92df7ac398d4fe0d038315e.png"></p>
+<p>之后点击“开始备份”，等待备份完成即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/8ab5ce3b911f08e34409c19e47dbc624.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/6635f9ac786b04f47bc57f8aa92edb07.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/5e39fddd97ba94610aa39888af91cc97.png"></p>
+<p>那如何把备份好的镜像弄出来呢？</p>
+<ol>
+<li>接U盘拷：速度慢，不稳定</li>
+<li>连NAS传：最方便，速度较快</li>
+<li>挂虚拟硬盘拷：麻烦，速度快</li>
+</ol>
+<p>下面我们演示第3种方式</p>
+<p>我们先将虚拟机关机，双击“设备”里的“硬盘”快速进入硬盘设置</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1581b085eec6283f5fde73486b9c9ee5.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/22e803146e987c1db24857431c03331e.png"></p>
+<p>记录好硬盘文件的位置后，彻底关闭VMware Workstation软件，打开DiskGenius</p>
+<p>磁盘-&gt;打开虚拟磁盘文件，找到你刚才记录的虚拟硬盘文件，点击“打开”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/717c901eacdc0aa7b626a9fea27fe284.png"></p>
+<p>此时，DiskGenius就会将虚拟硬盘里面的内容显示出来，在对应的硬盘分区里面找到刚刚备份出来的系统镜像文件，复制到指定文件夹即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/20e92a0db24b322806b2f2f0d1a1c513.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/cc4145516575aca1da56e0a40d05564c.png"></p>
+<h2 id="制作快速安装版镜像（Deploy-ed-Xiaoran-System-Image）"><a href="#制作快速安装版镜像（Deploy-ed-Xiaoran-System-Image）" class="headerlink" title="制作快速安装版镜像（Deploy-ed Xiaoran System Image）"></a>制作快速安装版镜像（Deploy-ed Xiaoran System Image）</h2><p>为了降低蓝屏几率，我们需要断开网络连接，<strong>右键</strong>单击窗口右下方状态栏上的<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://m.360buyimg.com/babel/jfs/t20250323/132399/31/30046/330/641d3579F8f5217fa/e92dcef456e9bfbf.png">，选择“断开连接(D)”，观察一下虚拟机内的提示，确定无法连接到网络</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4daaf7632f33a7d3c7b6a5e5d67c9762.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/f56d32f6d0f0b3bb7c840ff9fc51ac7b.png"></p>
+<p>接下来我们需要删除万能驱动，避免虚拟机的主板驱动导致镜像系统恢复到实体机后蓝屏</p>
+<p>万能驱动位于<code>C:\Windows\Setup\Set</code>下的wandrv.iso及wandrv数字.iso，将其删除即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/d5ec318e4689249c4ce337512462d610.png"></p>
+<p>注意：如果刚才您在“系统安装”主界面取消勾选了“引导分区”，这里我们需要手动修复一下引导</p>
+<p>打开虚拟机的命令提示符</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/2697e146e78e795a6e8f6f4edea655e5.png"></p>
+<p>输入以下命令后回车，注意其中的C:为系统盘的盘符，请根据实际情况修改，不要直接复制粘贴</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdboot c:\windows /l zh-cn /s c: /f bios</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/772bda1d1ce9b0ec53d8d2812cc92792.png"></p>
+<p>重启虚拟机（这个就不教了），等待系统部署完成进入桌面</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/61a615d822c9b6c771193d55cd1c096b.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/a4ecca14f07ec3bdaaa51eaba04ef853.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/e61767543b3f7d565ecda37e2b8bdb81.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/20750c40c71442cce8a9c9cb6af8a801.png"></p>
+<p>进入桌面后，如果您还有什么需要定制修改的，请现在就对系统进行设置，如安装各种软件，过了这个村就没有这个店了</p>
+<p>这个过程中最好不要联网，如果Windows 10以上版本系统联上了网，会自动下载虚拟机的主板驱动，这样可能会导致制作出来的系统镜像恢复到实体机后蓝屏</p>
+<p>至于VMware Tools那就更不用说了，肯定是别装</p>
+<p>当然如果你就是封装出来到VMware虚拟机里面用的，可以忽略我上面说的内容</p>
+<p>这里我们对系统进行一些调整，比如任务栏显示搜索框、显示触摸键盘、显示Cortana按钮、取消固定所有项目，Edge、360浏览器主页更改为about:blank，安装希沃白板5</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1a60ce0766b82fa722fa058748170576.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/9cc6b91f0fb6c013701686d2e72dadfa.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/c591b32a02ef50bdc449c709fb10942a.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/6c1158d23227cd82666bcca97980d046.png"></p>
+<p>对于其它安装包，我们可以通过制作ISO进行导入，也可以拷贝到U盘然后将U盘插入到虚拟机导入</p>
+<p>如果使用后者，可能会出现残留信息</p>
+<p>如果你不在意蓝屏问题，现在可以联网，到潇然一键装机助理、浏览器下载对应软件</p>
+<p>这边我们在虚拟机外将希沃白板5的官网最新安装包制作成ISO格式导入虚拟机</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/36c3ba48ad36ec84078137bebb476451.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/8dd146da18b6d126a1ebe550cce315ab.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/7379f012e027fb503229e2283fe504ca.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1f245f6514fffc28d738762697fe6940.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/87bc4bb1cab670f74b3575e276c44a2a.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/339c9582c7e33d09bb3cf088bcb4a89d.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4c1e8a73e7934f031e96fbbbbad7f944.png"></p>
+<p>重启后检查更改是否生效，拍摄快照，关闭虚拟机</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/504174d0b5f4e5f5f7a6dfbc73516c7a.png"></p>
+<p>双击“CD&#x2F;DVD”，快速弹出设置</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/1ed4c52d9fae5897dc58f24d54e59b60.png"></p>
+<p>点击ISO镜像文件路径旁边的下拉按钮，选择之前使用过的WinPE ISO，点击“确定”</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/63a58c9ba36ce44d9a9e4e243c38f416.png"></p>
+<p>开启虚拟机，疯狂按任意键</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/528fec4cad72cac43b56f039d7985d9d.png"></p>
+<p>选择第一项，回车</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/de04d433278f50446d98d657b521a3db.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/4e54c0363d9708231863b488085dc142.png"></p>
+<p>进入PE系统以后，打开资源管理器，进入C盘，删除以下文件夹：</p>
+<ul>
+<li>$Recycle.Bin</li>
+<li>Boot</li>
+<li>System Volume Information</li>
+</ul>
+<p>删除以下文件：</p>
+<ul>
+<li>bootmgr</li>
+<li>BOOTNXT</li>
+<li>DumpStack.log.tmp</li>
+<li>install.log</li>
+<li>pagefile.sys</li>
+<li>swap.sys</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/92783a2202283b7239746494a824db08.png"></p>
+<p>打开潇然一键装机助理，选择“系统备份”，按照PE下构建系统镜像（Build-ed Xiaoran System Image）的方法制作系统镜像文件</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/f688866c06c1b9f5f90bbdf38d83d7d6.png"></p>
+<p>将备份好的系统镜像文件恢复到实体机测试即可</p>
+<h3 id="实机测试"><a href="#实机测试" class="headerlink" title="实机测试"></a>实机测试</h3><p><video src="https://alist.xrgzs.top/xr/uploads/media/20230324001.mp4" controls width="100%"></video></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p1.meituan.net/csc/d859fdb35164ee07dfcfc4c0a88ca22357040.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p1.meituan.net/csc/d859fdb35164ee07dfcfc4c0a88ca22357040.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">狂犬主子</div><div class="post-copyright__author_desc">潇洒自然</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.xrgzs.top/xrsys/build-image">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.xrgzs.top/xrsys/build-image')">潇然系统镜像构建教程</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.xrgzs.top/xrsys/build-image"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=潇然系统镜像构建教程&amp;url=https://www.xrgzs.top/xrsys/build-image&amp;pic=/img/cover/36.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.xrgzs.top" target="_blank">潇然工作室</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__category-list"><a class="post-meta__box__categoryes" href="/categories/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/"><span class="categoryes-punctuation"> <i class="anzhiyufont anzhiyu-icon-inbox"></i></span>潇然系统<span class="categoryesPageCount">5</span></a></div></div><div class="post_share"><div class="social-share" data-image="/img/cover/36.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://npm.elemecdn.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/openwrt-istoreos-x-wrt-config-ipv6-nat6"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/cover/34.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">OpenWrt iStoreOS X-WRT 配置 IPv6 NAT6</div></div></a></div><div class="next-post pull-right"><a href="/eduimg"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/6a11c9dd1844f9aba6a323420b8f5341.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">希沃鸿合文香一体机OPS电脑原厂预装教育系统镜像ESD打包封装驱动程序下载恢复盘构建</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/xrok" title="潇然一键装机助理 Xiaoran Onekey"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img06.mifile.cn/v1/MI_542ED8B1722DC/748fb0acae98e3451572f29af1b2524a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-11-07</div><div class="title">潇然一键装机助理 Xiaoran Onekey</div></div></a></div><div><a href="/xrpe" title="潇然PE启动 Xiaoran PE"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p0.meituan.net/csc/7974c68fb5003acae75dcef9d0a098d9143846.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-01-24</div><div class="title">潇然PE启动 Xiaoran PE</div></div></a></div><div><a href="/xrsys" title="潇然系统 Xiaoran System"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p0.meituan.net/csc/e58534991ead5954c380a48396d4574c131750.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-02-21</div><div class="title">潇然系统 Xiaoran System</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p1.meituan.net/csc/d859fdb35164ee07dfcfc4c0a88ca22357040.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">分享网络装机知识。潇洒自然 - 潇然工作室 - Xiaoran Studio - 狂犬主子</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">狂犬主子</h1><div class="author-info__desc">潇洒自然</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/xrgzs" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/732710916" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="mailto:dalizxr#qq.com" target="_blank" title="Email"><i class="fa-solid fa-envelope faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="/atom.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss faa-tada"></i></a><a class="social-icon faa-parent animated-hover" href="https://qm.qq.com/q/iasEOmQrxS" target="_blank" title="QQ"><i class="fab fa-qq faa-tada"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://p0.meituan.net/csc/009d42722ce0b893fbe2b2f6604e9ee49333.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://p0.meituan.net/csc/3d27e6ffa6d5a48ddb985af639d9a6c121148.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="toc-text">潇然系统镜像构建教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">创建虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PE%E4%B8%8B%E6%81%A2%E5%A4%8D%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F"><span class="toc-text">PE下恢复系统镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PE%E4%B8%8B%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F%EF%BC%88Build-ed-Xiaoran-System-Image%EF%BC%89"><span class="toc-text">PE下构建系统镜像（Build-ed Xiaoran System Image）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E7%89%88%E9%95%9C%E5%83%8F%EF%BC%88Deploy-ed-Xiaoran-System-Image%EF%BC%89"><span class="toc-text">制作快速安装版镜像（Deploy-ed Xiaoran System Image）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%9C%BA%E6%B5%8B%E8%AF%95"><span class="toc-text">实机测试</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-clean-memory-cache" title="Linux 清理内存缓存"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/cover/36.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux 清理内存缓存"/></a><div class="content"><a class="title" href="/posts/linux-clean-memory-cache" title="Linux 清理内存缓存">Linux 清理内存缓存</a><time datetime="2024-03-24T10:22:50.000Z" title="发表于 2024-03-24 18:22:50">2024-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/macos-on-vmware" title="VMware Workstation 安装 macOS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/cover/28.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VMware Workstation 安装 macOS"/></a><div class="content"><a class="title" href="/posts/macos-on-vmware" title="VMware Workstation 安装 macOS">VMware Workstation 安装 macOS</a><time datetime="2024-03-15T00:51:46.000Z" title="发表于 2024-03-15 08:51:46">2024-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/xrsys" title="潇然系统 Xiaoran System"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p0.meituan.net/csc/e58534991ead5954c380a48396d4574c131750.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="潇然系统 Xiaoran System"/></a><div class="content"><a class="title" href="/xrsys" title="潇然系统 Xiaoran System">潇然系统 Xiaoran System</a><time datetime="2024-02-21T11:46:38.000Z" title="发表于 2024-02-21 19:46:38">2024-02-21</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:dalizxr#qq.com" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6233975700" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" href="/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://p1.meituan.net/csc/d859fdb35164ee07dfcfc4c0a88ca22357040.jpg" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/xrgzs" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/732710916" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://qm.qq.com/q/iasEOmQrxS" title="QQ"><i class="fab fa-qq"></i></a></div><div class="footer_custom_text">Xiaoran Studio</div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo" title="博客框架为Hexo"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://www.cloudflare-cn.com/" style="margin-inline:5px" data-title="本站使用Cloudflare为全站资源提供CDN加速" title="本站使用Cloudflare为全站资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/shields/CDN-Cloudflare-F38020.svg" alt="本站使用Cloudflare为全站资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://github.com/xrgzs/xrgzs.github.io" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2017 - 2024 By <a class="footer-bar-link" href="/" title="狂犬主子" target="_blank">狂犬主子</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://umami.lmxiao.top/share/SfdKh5gGaFdevdY7/www.xrgzs.top" title="统计">统计</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://lmxiao.top/" title="特别感谢：凌梦晓">特别感谢：凌梦晓</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">96</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">站点</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.xrgzs.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/blog.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://alist.xrgzs.top/" title="下载站"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/cloud-storage.png" alt="下载站"/><span class="back-menu-item-text">下载站</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://sys.xrgzs.top/" title="系统部署"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/laptop-settings.png" alt="系统部署"/><span class="back-menu-item-text">系统部署</span></a><a class="back-menu-item" href="https://www.xrgzs.top/xrok.html" title="装机助理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/get-started-app.png" alt="装机助理"/><span class="back-menu-item-text">装机助理</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://pe.xrgzs.top/" title="维护启动"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.icons8.com/fluency/96/c-drive.png" alt="维护启动"/><span class="back-menu-item-text">维护启动</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 项目</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://sys.xrgzs.top/"><i class="fa-solid fa-gear faa-tada"></i><span> 系统部署</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/xrok"><i class="fa-solid fa-arrows-rotate faa-tada"></i><span> 装机助理</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://pe.xrgzs.top/"><i class="fa-solid fa-toolbox faa-tada"></i><span> 维护启动</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 资源</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="https://l.xr.oxyxc.top/msdn"><i class="fa-brands fa-windows faa-tada"></i><span> Windows</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/ms-office-c2r-download"><i class="fa-solid fa-file-word faa-tada"></i><span> Office C2R</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/ms-office-msi-download"><i class="fa-regular fa-file-word faa-tada"></i><span> Office MSI</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/posts/tvbox"><i class="fa-solid fa-box faa-tada"></i><span> 盒子</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener" href="http://xrgzs.ysepan.com/"><i class="fa-solid fa-bookmark faa-tada"></i><span> 藏经阁</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/xrgzs"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我们</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/360/" style="font-size: 0.88rem;">360<sup>1</sup></a><a href="/tags/arch-linux/" style="font-size: 0.88rem;">Arch Linux<sup>1</sup></a><a href="/tags/centos/" style="font-size: 0.88rem;">CentOS<sup>2</sup></a><a href="/tags/linux/" style="font-size: 0.88rem;">Linux<sup>7</sup></a><a href="/tags/office/" style="font-size: 0.88rem;">Office<sup>6</sup></a><a href="/tags/vip/" style="font-size: 0.88rem;">VIP<sup>1</sup></a><a href="/tags/winpe/" style="font-size: 0.88rem;">WinPE<sup>1</sup></a><a href="/tags/windows/" style="font-size: 0.88rem;">Windows<sup>9</sup></a><a href="/tags/windows7/" style="font-size: 0.88rem;">Windows7<sup>1</sup></a><a href="/tags/xiaoran-onekey/" style="font-size: 0.88rem;">Xiaoran Onekey<sup>1</sup></a><a href="/tags/xiaoran-pe/" style="font-size: 0.88rem;">Xiaoran PE<sup>1</sup></a><a href="/tags/xiaoran-studio/" style="font-size: 0.88rem;">Xiaoran Studio<sup>6</sup></a><a href="/tags/xiaoran-system/" style="font-size: 0.88rem;">Xiaoran System<sup>5</sup></a><a href="/tags/adblock/" style="font-size: 0.88rem;">adblock<sup>1</sup></a><a href="/tags/curl/" style="font-size: 0.88rem;">curl<sup>1</sup></a><a href="/tags/pacman/" style="font-size: 0.88rem;">pacman<sup>1</sup></a><a href="/tags/xfs/" style="font-size: 0.88rem;">xfs<sup>1</sup></a><a href="/tags/%E5%8E%9F%E5%8E%82%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">原厂系统<sup>2</sup></a><a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 0.88rem;">去广告<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 0.88rem;">安全<sup>1</sup></a><a href="/tags/%E6%81%A2%E5%A4%8D%E7%9B%98/" style="font-size: 0.88rem;">恢复盘<sup>2</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">操作系统<sup>6</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" style="font-size: 0.88rem;">服务器运维<sup>4</sup></a><a href="/tags/%E6%9D%80%E6%AF%92/" style="font-size: 0.88rem;">杀毒<sup>1</sup></a><a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 0.88rem;">油猴<sup>1</sup></a><a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 0.88rem;">浏览器<sup>2</sup></a><a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 0.88rem;">浏览器插件<sup>1</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E4%B8%80%E9%94%AE%E8%A3%85%E6%9C%BA%E5%8A%A9%E7%90%86/" style="font-size: 0.88rem;">潇然一键装机助理<sup>1</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4/" style="font-size: 0.88rem;">潇然工作室<sup>6</sup></a><a href="/tags/%E6%BD%87%E7%84%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">潇然系统<sup>5</sup></a><a href="/tags/%E6%BF%80%E6%B4%BB/" style="font-size: 0.88rem;">激活<sup>2</sup></a><a href="/tags/%E7%81%AB%E7%BB%92/" style="font-size: 0.88rem;">火绒<sup>1</sup></a><a href="/tags/%E7%94%B5%E8%84%91%E7%AE%A1%E5%AE%B6/" style="font-size: 0.88rem;">电脑管家<sup>1</sup></a><a href="/tags/%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/" style="font-size: 0.88rem;">硬盘扩容<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 0.88rem;">系统安装<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/" style="font-size: 0.88rem;">系统镜像<sup>2</sup></a><a href="/tags/%E8%84%9A%E6%9C%AC/" style="font-size: 0.88rem;">脚本<sup>1</sup></a><a href="/tags/%E8%A7%84%E5%88%99/" style="font-size: 0.88rem;">规则<sup>1</sup></a><a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 0.88rem;">证书<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 0.88rem;">软件<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8856576456&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://npm.elemecdn.com/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static/icon/ali_iconfont_css.css"><script src="https://myhkw.cn/api/player/165943534482" id="myhk" key="165943534482" ></script><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://npm.elemecdn.com/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
