@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>潇然工作室 - Xiaoran Studio</title>
+    <meta name="description" content="潇洒自然,潇洒自然工作室,潇然工作室,Xiaoran Studio,xrgzs,狂犬主子,网络装机,潇然系统,潇然装机,装机助理,装机软件,重装系统" />
+
+    <!-- 动态设置canonical -->
+    <link rel="canonical" id="canonical-link" href="https://www.xrgzs.top/" />
+
+    <!-- 主重定向逻辑 -->
+    <script>
+        // 获取完整路径信息
+        var path = location.pathname;
+        var search = location.search;
+        var hash = location.hash;
+        var target = "https://www.xrgzs.top" + path + search + hash;
+
+        // 更新页面元素
+        document.addEventListener("DOMContentLoaded", function () {
+            // 更新canonical链接
+            document.getElementById("canonical-link").href = target;
+
+            // 更新所有跳转链接
+            var links = document.querySelectorAll("[data-redirect]");
+            links.forEach(function (link) {
+                link.href = target;
+            });
+        });
+
+        // 立即跳转
+        window.location.replace(target);
+    </script>
+
+    <!-- noscript回退方案 -->
+    <noscript>
+        <meta http-equiv="refresh" content="5; url=https://www.xrgzs.top/" />
+    </noscript>
+</head>
+
+<body>
+    <h1>潇然工作室 - Xiaoran Studio</h1>
+    <p>正在重定向到www.xrgzs.top</p>
+    <p>如果跳转没有自动完成，请<a href="https://www.xrgzs.top/" data-redirect>点击此处</a>。</p>
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</body>
+
+</html>
